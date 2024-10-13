@@ -7,6 +7,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:80"
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
     volumes:
       - ./symfony/public:/var/www/html/
       - ./symfony:/var/www/
@@ -16,9 +18,12 @@ services:
   db:
     image: postgres:13
     environment:
-      - POSTGRES_DB=your_database
-      - POSTGRES_USER=your_user
-      - POSTGRES_PASSWORD=your_password
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - PGPORT=${POSTGRES_PORT}
+    ports:
+      - "${POSTGRES_PORT}:${POSTGRES_PORT}"
     volumes:
       - db-data:/var/lib/postgresql/data
 
