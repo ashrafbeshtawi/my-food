@@ -12,6 +12,12 @@ services:
     volumes:
       - ./symfony/public:/var/www/html/
       - ./symfony:/var/www/
+    command: >
+      bash -c "
+        echo 'Running startup tasks...' &&
+        composer install &&
+        php -S 0.0.0.0:80 -t ./html ./html/index.php
+      "
     depends_on:
       - db
 
