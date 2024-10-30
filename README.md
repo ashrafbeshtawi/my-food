@@ -3,8 +3,8 @@
 ## 1. Make the scripts executable
 
 ```bash
-chmod +x bin/setup.sh
-chmod +x bin/reset.sh
+chmod +x bin/setup
+chmod +x bin/reset
 ```
 
 ## 2. Run the project
@@ -12,7 +12,7 @@ chmod +x bin/reset.sh
 Execute the following command:
 
 ```bash
-bin/setup.sh
+bin/setup
 ```
 
 ## 3. Reset the project
@@ -20,5 +20,5 @@ bin/setup.sh
 To shutdown containers and remove installed dependencies, run:
 
 ```bash
-bin/reset.sh
+bin/reset
 ```

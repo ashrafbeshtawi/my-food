@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Shut down the containers
-docker-compose down
+docker compose down
 
 # Define the folders to remove
 folders=(
